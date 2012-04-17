@@ -30,25 +30,25 @@ exports.Main = function() {
 
 	var sedesT = Titanium.UI.createTab({
 		title : 'Sedes',
-		icon:'/images/casa.png',
+		icon:'/images/BotonSedesChico.png',
 		window : sedesW
 	});
 
 	var mapasT = Ti.UI.createTab({
 		title : 'Mapas',
-		icon:'/images/mapa.png',
+		icon:'/images/BotonMapaChico.png',
 		window : mapasW
 	});
 
 	var redesT = Ti.UI.createTab({
 		title : 'Redes',
-		icon:'/images/contacto.png',
+		icon:'/images/BotonRedesChico.png',
 		window : redesW
 	});
 
 	var acercaT = Ti.UI.createTab({
-		icon:'/images/acerca.png',
-		title : 'Acerca',
+		icon:'/images/BotonAcercaChico.png',
+		title : 'Acerca de',
 		window : acercaW
 	})
 	tabGroup.addTab(sedesT);
