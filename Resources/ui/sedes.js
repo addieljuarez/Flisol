@@ -3,12 +3,12 @@ Titanium.include('/json/json.js');
 Titanium.include('/data/images.js');
 
 var sedes = Ti.UI.currentWindow;
-sedes.backgroundColor = '#fff';
-
+//sedes.backgroundColor = '#000';
+//sedes.backgroundImage = '../image/general.jpg';
 var view = Titanium.UI.createView({
 	backgroundColor : '#f1701c',
 	width : 'auto',
-	height : '44dp',
+	height : '35dp',
 	top : '0dp',
 	
 });
@@ -24,18 +24,25 @@ var search = Titanium.UI.createSearchBar({
 	barColor : '#f38239',
 	height : '40dp',
 	hintText : 'Busca tu sede',
-	top : '44dp',
+	top : '0dp',
 	showCancel:false
 });
 
 var sedesTV = Titanium.UI.createTableView({
-	top : 44,
+	borderRadius:7,
+	top : '44dp',
+	left:'15dp',
+	right:'15dp',
+	down:'25dp',
+	//width:'25dp',
 	minRowHeight : '55dp',
 	maxRowHeight : '60dp',
+	
 	editable : true,
 	backgroundColor:'#f0efee',
 	search: search,
-     filterAttribute:'filter'
+     filterAttribute:'filter',
+     
 	
 });
 
@@ -52,10 +59,10 @@ parsearBd = function(){
 					filter:json[i].nombre,
 				});
 				var logoSede = Titanium.UI.createImageView({
-					height : 50,
-					width : 50,
-					top : 2,
-					left : 3,
+					height : '45dp',
+					width : '45dp',
+					top : '2dp',
+					left : '3dp',
 					image : getImage(json[i].logo),
 					touchEnabled : false,
 					backgroundColor : '#fff',
@@ -64,42 +71,45 @@ parsearBd = function(){
 
 				var nombreSede = Titanium.UI.createLabel({
 					text : json[i].nombre,
-					font : {
-						fontSize : '16dp',
-						fontWeight : 'bold'
+					font : 
+					{
+						fontSize : '15dp',
+						fontWeight : 'bold',
+						//color:'#000'
 					},
 					left : '60dp',
-					top : '-20dp',
-					touchEnabled : false
+					//top : '-20dp',
+					touchEnabled : false,
+					color:'#000'
 				});
 
-				var direccionSede = Titanium.UI.createLabel({
-					text : json[i].direccion.substring(0, 40),
-					font : {
-						fontSize : '12dp'
-					},
-					left : '60dp',
-					top : '10dp',
-					color : '#1f1f1d',
-					touchEnabled : false
-				});
-
-				var horarioSede = Titanium.UI.createLabel({
-					text : json[i].horario,
-					font : {
-						fontSize : '12dp',
-					},
-					height : 'auto',
-					left : '64dp',
-					top : '38dp',
-					color : '#878681',
-					touchEnabled : false
-
-				});
+				// var direccionSede = Titanium.UI.createLabel({
+					// text : json[i].direccion.substring(0, 40),
+					// font : {
+						// fontSize : '12dp'
+					// },
+					// left : '60dp',
+					// top : '10dp',
+					// color : '#1f1f1d',
+					// touchEnabled : false
+				// });
+// 
+				// var horarioSede = Titanium.UI.createLabel({
+					// text : json[i].horario,
+					// font : {
+						// fontSize : '12dp',
+					// },
+					// height : 'auto',
+					// left : '64dp',
+					// top : '38dp',
+					// color : '#878681',
+					// touchEnabled : false
+// 
+				// });
 			caja.add(logoSede);
 			caja.add(nombreSede);
-			caja.add(direccionSede);
-			caja.add(horarioSede);
+		//	caja.add(direccionSede);
+		//	caja.add(horarioSede);
 			tableData.push(caja);
 			
 			}
@@ -205,7 +215,7 @@ if (new BaseDeDatos().NumeroDeFilas()==0){
 
 view.addEventListener('click', function(e){
 	sedesTV.setData();
-	alert('Se van a eliminar datos de la tabla');
+	alert('Actualizando');
 	parsearJson(1);
 });
 

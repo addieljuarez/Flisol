@@ -2,14 +2,16 @@ exports.Main = function() {
 
 	Ti.UI.setBackgroundColor('#fff');
 
-	var tabGroup = Titanium.UI.createTabGroup();
+	var tabGroup = Titanium.UI.createTabGroup({
+		
+	});
 
 	var sedesW = Titanium.UI.createWindow({
 		title : 'Sedes',
 		url:'/ui/sedes.js',
 		navBarHidden:true ,
-		backgroundColor:'#000',
-		//backgroundImage:'../images/all.jpg'
+		//backgroundColor:'#000',
+		//backgroundImage:'../images/general.jpg'
 	});
 
 	var mapasW = Ti.UI.createWindow({
