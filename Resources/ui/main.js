@@ -7,31 +7,37 @@ exports.Main = function() {
 	var sedesW = Titanium.UI.createWindow({
 		title : 'Sedes',
 		url:'/ui/sedes.js',
-		navBarHidden:true  
+		navBarHidden:true ,
+		backgroundColor:'#000',
+		//backgroundImage:'../images/all.jpg'
 	});
 
 	var mapasW = Ti.UI.createWindow({
 		title : 'Mapa',
 		url:'/ui/mapas.js',
-		navBarHidden:true  
+		navBarHidden:true,
+	//	orientationModes:[Titanium.UI.LANDSCAPE_LEFT]
 	});
 
 	var redesW = Ti.UI.createWindow({
 		title:'Redes',
 		url:'/ui/redes.js',
-		navBarHidden:true  
+		navBarHidden:true ,
+		//orientationModes:[Titanium.LANDSCAPE_LEFT]
 	});
 	
 	var acercaW = Ti.UI.createWindow({
 		title : 'Acerca',
 		url:'/ui/acerca.js',
-		navBarHidden:true  
+		navBarHidden:true  ,
+		//orientationModes:[Titanium.LANDSCAPE_LEFT]
 	});
 
 	var sedesT = Titanium.UI.createTab({
 		title : 'Sedes',
 		icon:'/images/BotonSedesChico.png',
-		window : sedesW
+		window : sedesW,
+		//orientationModes:[Titanium.UI.LANDSCAPE_LEFT]
 	});
 
 	var mapasT = Ti.UI.createTab({
@@ -49,6 +55,7 @@ exports.Main = function() {
 	var acercaT = Ti.UI.createTab({
 		icon:'/images/BotonAcercaChico.png',
 		title : 'Acerca de',
+		
 		window : acercaW
 	})
 	tabGroup.addTab(sedesT);

@@ -7,16 +7,24 @@ sedes.backgroundColor = '#fff';
 
 var view = Titanium.UI.createView({
 	backgroundColor : '#f1701c',
-	width : 320,
-	height : 44,
-	top : 0
+	width : 'auto',
+	height : '44dp',
+	top : '0dp',
+	
 });
+var labelActualizar = Titanium.UI.createLabel({
+	text:'Toque aqui para actualizar la lista'
+});
+
+view.add(labelActualizar);
+
+
 
 var search = Titanium.UI.createSearchBar({
 	barColor : '#f38239',
-	height : 40,
+	height : '40dp',
 	hintText : 'Busca tu sede',
-	top : 0,
+	top : '44dp',
 	showCancel:false
 });
 

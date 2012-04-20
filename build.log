@@ -1,17 +1,17 @@
 Logfile initialized
 [INFO] logfile = /home/addiel/Titanium Studio Workspace/Flisol/build.log
-[DEBUG] /home/addiel/.titanium/mobilesdk/linux/1.8.2/android/builder.py simulator Flisol /home/addiel/developer/android linux/android-sdk-linux_x86 /home/addiel/Titanium Studio Workspace/Flisol com.FAM.Flisol 8 WVGA800 
+[DEBUG] /home/addiel/.titanium/mobilesdk/linux/2.0.1.GA2/android/builder.py simulator Flisol /home/addiel/developer/android linux/android-sdk-linux_x86 /home/addiel/Titanium Studio Workspace/Flisol com.FAM.Flisol 8 WVGA800 
 [INFO] Building Flisol for Android ... one moment
-[INFO] Titanium SDK version: 1.8.2 (02/23/12 17:46 59b3a90)
+[INFO] Titanium SDK version: 2.0.1 (04/12/12 16:33 999c68a)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.006832 seconds on emulator to get ready
+[DEBUG] waited 0.015017 seconds on emulator to get ready
 [DEBUG] com.FAM.Flisol installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
+[INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING CREATED FILE: /home/addiel/Titanium Studio Workspace/Flisol/Resources/images/BotonAcercaChico.png => /home/addiel/Titanium Studio Workspace/Flisol/build/android/bin/assets/Resources/images/BotonAcercaChico.png
-[TRACE] COPYING MODIFIED FILE: /home/addiel/Titanium Studio Workspace/Flisol/Resources/ui/main.js => /home/addiel/Titanium Studio Workspace/Flisol/build/android/bin/assets/Resources/ui/main.js
+[TRACE] COPYING MODIFIED FILE: /home/addiel/Titanium Studio Workspace/Flisol/Resources/ui/sedes.js => /home/addiel/Titanium Studio Workspace/Flisol/build/android/bin/assets/Resources/ui/sedes.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
 [DEBUG] found drawable-notlong-land-hdpi splash screen at /home/addiel/Titanium Studio Workspace/Flisol/Resources/android/images/res-notlong-land-hdpi/default.png
