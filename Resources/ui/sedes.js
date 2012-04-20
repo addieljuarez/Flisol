@@ -28,9 +28,18 @@ var search = Titanium.UI.createSearchBar({
 	showCancel:false
 });
 
+var logoPantalla = Titanium.UI.createImageView({
+	image:'../image/icono2.png',
+	height:'35dp',
+	width:'35dp',
+	top:'50',
+});
+view.add(logoPantalla);
+
+
 var sedesTV = Titanium.UI.createTableView({
 	borderRadius:7,
-	top : '44dp',
+	top : '50dp',
 	left:'15dp',
 	right:'15dp',
 	down:'25dp',
@@ -232,6 +241,6 @@ sedesTV.addEventListener('click', function(e){
 
 });
 
-sedes.add(view);
+//sedes.add(view);
 //sedes.add(search);
 sedes.add(sedesTV);
