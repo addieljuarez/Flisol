@@ -57,7 +57,7 @@ sedes.add(logoPantalla);
 var sedesTV = Titanium.UI.createTableView({
 	borderRadius:7,
 	borderColor:'#f1701c',
-	borderWidth:'4',
+	borderWidth:'6',
 	top : '50dp',
 	left:'15dp',
 	right:'15dp',
@@ -90,7 +90,7 @@ parsearBd = function(){
 					height : '45dp',
 					width : '45dp',
 					top : '2dp',
-					left : '5dp',
+					left : '9dp',
 					image : getImage(json[i].logo),
 					touchEnabled : false,
 					backgroundColor : '#fff',
@@ -255,6 +255,7 @@ sedesTV.addEventListener('click', function(e){
 		title:e.rowData.id,
 		url:'/ui/detalleSede.js',
 		ID:E,
+		navBarHidden:true ,
 		
 	});
 	sede.open({modal:true});
