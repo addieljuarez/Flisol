@@ -143,12 +143,13 @@ haciaPagina.addEventListener('click', (function(e){
 	var pagina = Ti.UI.createWindow({
 		//title:e.rowData.id,
 		url:'/ui/pagina.js',
-		//ID:E,
+		id:e.id,
+		
 		navBarHidden:true ,
 		
 	});
-	
-	pagina.open({modal:true})
+	alert : (sede.title);
+//pagina.open({modal:true})
 }));
 
 

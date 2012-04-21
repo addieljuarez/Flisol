@@ -6,7 +6,7 @@ var pagina = Ti.UI.currentWindow;
 pagina.backgroundColor='#000';
 
 //var paginaDB = new BaseDeDatos().InformacionSede(sede);
-var infoPagina = new BaseDeDatos().InformacionPagina(id)
+//var infoPagina = new BaseDeDatos().InformacionPagina(id)
 //var sedeBD = new BaseDeDatos().InformacionSede(sede.ID);
 
 //imagen para regresar
@@ -66,20 +66,26 @@ pagina.add(cuadroPrincipal)
 //pagina.add(view);
  
  
- var nombre = Ti.UI.createLabel({
-	text : infoPagina[0].url,
-	font : {
-		fontSize : '24dp',
-		fontWeight : 'bold',
-		fontFamily:'Arial'
-	},
-	 shadowColor:'#aaa',
-    shadowOffset:{x:3,y:3},
-	height : 'auto',
-	width : '240dp',
-	top : '10dp',
-	left : '90dp',
-	textAlign : 'left',
-	color : '#c5500b'
-});
-cuadroPrincipal.add(nombre);
+ 
+ 
+ 
+ 
+ 
+ 
+ // var nombre = Ti.UI.createLabel({
+	// text : infoPagina[0].url,
+	// font : {
+		// fontSize : '24dp',
+		// fontWeight : 'bold',
+		// fontFamily:'Arial'
+	// },
+	 // shadowColor:'#aaa',
+    // shadowOffset:{x:3,y:3},
+	// height : 'auto',
+	// width : '240dp',
+	// top : '10dp',
+	// left : '90dp',
+	// textAlign : 'left',
+	// color : '#c5500b'
+// });
+// cuadroPrincipal.add(nombre);
