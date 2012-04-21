@@ -36,28 +36,31 @@ exports.Main = function() {
 	});
 
 	var sedesT = Titanium.UI.createTab({
-		title : 'Sedes',
-		icon:'/images/BotonSedesChico.png',
+		//title : 'Sedes',
+		icon:'/images/SEDES.png',
+		top:'0dp',
+		left:'0dp',
+		right:'0dp',
 		window : sedesW,
 		
 		//orientationModes:[Titanium.UI.LANDSCAPE_LEFT]
 	});
 
 	var mapasT = Ti.UI.createTab({
-		title : 'Mapas',
-		icon:'/images/BotonMapaChico.png',
+		//title : 'MAPA',
+		icon:'/images/MAPA.png',
 		window : mapasW
 	});
 
 	var redesT = Ti.UI.createTab({
-		title : 'Redes',
-		icon:'/images/BotonRedesChico.png',
+		//title : 'Redes',
+		icon:'/images/REDES.png',
 		window : redesW
 	});
 
 	var acercaT = Ti.UI.createTab({
-		icon:'/images/BotonAcercaChico.png',
-		title : 'Acerca de',
+		icon:'/images/ACERCA.png',
+		//title : 'Acerca de',
 		
 		window : acercaW
 	})

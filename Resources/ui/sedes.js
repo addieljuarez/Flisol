@@ -5,18 +5,18 @@ Titanium.include('/data/images.js');
 var sedes = Ti.UI.currentWindow;
 //sedes.backgroundColor = '#000';
 //sedes.backgroundImage = '../image/general.jpg';
-var view = Titanium.UI.createView({
-	backgroundColor : '#f1701c',
-	width : 'auto',
-	height : '35dp',
-	top : '0dp',
-	
-});
-var labelActualizar = Titanium.UI.createLabel({
-	text:'Toque aqui para actualizar la lista'
-});
-
-sedes.add(labelActualizar);
+// var view = Titanium.UI.createView({
+	// backgroundColor : '#f1701c',
+	// width : 'auto',
+	// height : '35dp',
+	// top : '0dp',
+// 	
+// });
+// var labelActualizar = Titanium.UI.createLabel({
+	// text:'Toque aqui para actualizar la lista'
+// });
+// 
+// sedes.add(labelActualizar);
 
 
 
@@ -25,32 +25,39 @@ var search = Titanium.UI.createSearchBar({
 	height : '40dp',
 	hintText : 'Busca tu sede',
 	top : '0dp',
-	showCancel:false
+	showCancel:false,
+	
 });
 
 var logoPantalla = Titanium.UI.createImageView({
-	image:'../images/icono2.png',
+	image:'../images/FLISOLgeneral.png',
 	height:'40dp',
-	width:'40dp',
+	width:'230dp',
 	top:'5dp',
-	left:'40dp',
+	//left:'40dp',
 });
 sedes.add(logoPantalla);
 
-var labelFlisol = Titanium.UI.createLabel({
-	text:'      FLISOL    2012',
-	font:
-	{
-		fontSize : '30dp',
-		fontWeight : 'bold',
-	},
-	//color:'#fff',
-	top:'5dp'
-});
-sedes.add(labelFlisol)
+// var labelFlisol = Titanium.UI.createLabel({
+	// text:'      FLISOL    2012',
+	// font:
+	// {
+		// fontSize : '30dp',
+		// fontWeight : 'bold',
+	// },
+	// //color:'#fff',
+	// top:'5dp'
+// });
+// sedes.add(labelFlisol)
+
+
+
+
 
 var sedesTV = Titanium.UI.createTableView({
 	borderRadius:7,
+	borderColor:'#f1701c',
+	borderWidth:'4',
 	top : '50dp',
 	left:'15dp',
 	right:'15dp',
@@ -83,7 +90,7 @@ parsearBd = function(){
 					height : '45dp',
 					width : '45dp',
 					top : '2dp',
-					left : '3dp',
+					left : '5dp',
 					image : getImage(json[i].logo),
 					touchEnabled : false,
 					backgroundColor : '#fff',
@@ -234,11 +241,11 @@ if (new BaseDeDatos().NumeroDeFilas()==0){
 		parsearBd();
 	}
 
-view.addEventListener('click', function(e){
-	sedesTV.setData();
-	alert('Actualizando');
-	parsearJson(1);
-});
+// view.addEventListener('click', function(e){
+	// sedesTV.setData();
+	// alert('Actualizando');
+	// parsearJson(1);
+// });
 
 sedesTV.addEventListener('click', function(e){
 	
@@ -247,9 +254,10 @@ sedesTV.addEventListener('click', function(e){
 	var sede = Ti.UI.createWindow({
 		title:e.rowData.id,
 		url:'/ui/detalleSede.js',
-		ID:E
+		ID:E,
+		
 	});
-	sede.open();
+	sede.open({modal:true});
 
 });
 
