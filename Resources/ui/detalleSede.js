@@ -1,5 +1,6 @@
 Titanium.include('/db/db.js');
 Titanium.include('/data/images.js');
+Titanium.include('/ui/pagina.js')
 var sede = Ti.UI.currentWindow;
 sede.backgroundColor = '#000';
 sede.animate = true;
@@ -105,11 +106,12 @@ var separador = Titanium.UI.createView({
 	backgroundColor:'#f1701c',
 	left:'3dp',	
 	right:'3dp',
-	top:'80dp',
+	top:'75dp',
 });
 footer.add(separador);
 
 
+//direccion de sede
 var lugar = Ti.UI.createLabel({
 	text : ' ' + sedeBD[0].direccion,
 	font : {
@@ -127,12 +129,12 @@ var lugar = Ti.UI.createLabel({
 });
 
 
-
+//imagen  hacia web
 var haciaPagina = Titanium.UI.createImageView({
 	image:'../images/haciaPagina.png',
-	height:'80dp',
-	width:'280',
-	top:'30%',
+	height:'55dp',
+	width:'200dp',
+	top:'50%',
 	
 });
 footer.add(haciaPagina);
@@ -141,9 +143,9 @@ footer.add(haciaPagina);
 
 var haciaMapa = Titanium.UI.createImageView({
 	image:'../images/haciaMapa.png',
-	height:'80dp',
-	width:'280',
-	top:'60%',
+	height:'55dp',
+	width:'200dp',
+	top:'70%',
 	
 });
 footer.add(haciaMapa);
@@ -179,6 +181,19 @@ footer.add(haciaMapa);
 	// barColor : 'black',
 	// //style:Titanium.UI.iPhone.TableViewStyle.PLAIN,
 // });
+
+//
+haciaPagina.addEventListener('click', (function(e){
+	var pagina = Ti.UI.createWindow({
+		//title:e.rowData.id,
+		url:'/ui/pagina.js',
+		//ID:E,
+		navBarHidden:true ,
+		
+	});
+	
+	pagina.open({modal:true})
+}));
 
 
 footer.add(lugar);
