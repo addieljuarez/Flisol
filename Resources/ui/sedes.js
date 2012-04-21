@@ -16,7 +16,7 @@ var labelActualizar = Titanium.UI.createLabel({
 	text:'Toque aqui para actualizar la lista'
 });
 
-view.add(labelActualizar);
+sedes.add(labelActualizar);
 
 
 
@@ -29,13 +29,25 @@ var search = Titanium.UI.createSearchBar({
 });
 
 var logoPantalla = Titanium.UI.createImageView({
-	image:'../image/icono2.png',
-	height:'35dp',
-	width:'35dp',
-	top:'50',
+	image:'../images/icono2.png',
+	height:'40dp',
+	width:'40dp',
+	top:'5dp',
+	left:'40dp',
 });
-view.add(logoPantalla);
+sedes.add(logoPantalla);
 
+var labelFlisol = Titanium.UI.createLabel({
+	text:'      FLISOL    2012',
+	font:
+	{
+		fontSize : '30dp',
+		fontWeight : 'bold',
+	},
+	//color:'#fff',
+	top:'5dp'
+});
+sedes.add(labelFlisol)
 
 var sedesTV = Titanium.UI.createTableView({
 	borderRadius:7,

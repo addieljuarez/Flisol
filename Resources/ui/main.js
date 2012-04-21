@@ -39,6 +39,7 @@ exports.Main = function() {
 		title : 'Sedes',
 		icon:'/images/BotonSedesChico.png',
 		window : sedesW,
+		
 		//orientationModes:[Titanium.UI.LANDSCAPE_LEFT]
 	});
 
