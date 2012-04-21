@@ -139,8 +139,20 @@ var haciaPagina = Titanium.UI.createImageView({
 });
 footer.add(haciaPagina);
 
+haciaPagina.addEventListener('click', (function(e){
+	var pagina = Ti.UI.createWindow({
+		//title:e.rowData.id,
+		url:'/ui/pagina.js',
+		//ID:E,
+		navBarHidden:true ,
+		
+	});
+	
+	pagina.open({modal:true})
+}));
 
 
+//hacai el mapa
 var haciaMapa = Titanium.UI.createImageView({
 	image:'../images/haciaMapa.png',
 	height:'55dp',
@@ -150,6 +162,17 @@ var haciaMapa = Titanium.UI.createImageView({
 });
 footer.add(haciaMapa);
 
+haciaMapa.addEventListener('click', (function(e){
+	var mapa = Ti.UI.createWindow({
+		//title:e.rowData.id,
+		url:'/ui/mapa.js',
+		//ID:E,
+		navBarHidden:true ,
+		
+	});
+	
+	mapa.open({modal:true})
+}));
 
 
 // data = [{
@@ -183,17 +206,7 @@ footer.add(haciaMapa);
 // });
 
 //
-haciaPagina.addEventListener('click', (function(e){
-	var pagina = Ti.UI.createWindow({
-		//title:e.rowData.id,
-		url:'/ui/pagina.js',
-		//ID:E,
-		navBarHidden:true ,
-		
-	});
-	
-	pagina.open({modal:true})
-}));
+
 
 
 footer.add(lugar);

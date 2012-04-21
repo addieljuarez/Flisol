@@ -27,7 +27,7 @@ function BaseDeDatos() {
 		for(var i = 0; i < json.length; i++) {
 			var sede = json[i];
 			db.execute('INSERT INTO SEDES(idSede, nombre, direccion,horario, contacto, url, logo) VALUES(?,?,?,?,?,?,?)', sede.idSede, sede.nombre, sede.direccion, sede.horario, sede.contacto, sede.url, sede.logo);
-			db.execute('INSERT INTO MAPAS(idMapa, latitud, longitud, latitudP, longitudP, nombreMapa) VALUES(?,?,?,?,?,?)', sede.idSede, sede.latitud, sede.longitud, sede.latitudP, sede.longitudP, sede.nombre);
+			db.execute('INSERT INTO MAPAS(idMapa, latitud, longitud, nombreMapa) VALUES(?,?,?,?,?,?)', sede.idSede, sede.latitud, sede.longitud, sede.nombre);
 			Ti.API.info('Guardando datos  --DB-- # ' + i);
 		}
 		db.close();
@@ -111,7 +111,7 @@ function BaseDeDatos() {
 	}
 	this.InformacionMapa = function(id){
 		var db = Ti.Database.open('Flisol');
-		var resultSedesDatos = db.execute('select  latitud, longitud, latitudP, longitudP, nombreMapa from MAPAS where idMapa =' + id + ' ');
+		var resultSedesDatos = db.execute('select  latitud, longitud, nombreMapa from MAPAS where idMapa =' + id + ' ');
 		var mapa = [];
 		var l = 0;
 		while(resultSedesDatos.isValidRow()) {
@@ -130,4 +130,24 @@ function BaseDeDatos() {
 		return mapa;
 
 	}
+	
+	this.InformacionPagina = function(id){
+		var db = Ti.Database.open('Flisol');
+		var resultSedesDatos = db.execute('select  idSede, url from SEDES where idSede =' + id + ' ');
+		var infoPagina = [];
+		var l = 0;
+		while(resultSedesDatos.isValidRow()) {
+			var row = new Object();
+			row.idSede = resultSedesDatos.fieldByName("idSede");
+			row.pagina = resultSedesDatos.fieldByName("url");
+			infoPagina.push(row);
+			l++;
+			Ti.API.info(l);
+			resultSedesDatos.next();
+		}
+		resultSedesDatos.close();
+		return infoPagina;
+
+	}
+	
 }

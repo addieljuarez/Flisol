@@ -1,19 +1,60 @@
 Titanium.include('/db/db.js');
 Titanium.include('/data/images.js');
-mapaSede = Titanium.UI.currentWindow;
+var mapaSede = Titanium.UI.currentWindow;
+mapaSede.backgroundColor = '#000';
+// var view = Ti.UI.createView({
+	// backgroundColor : '#f1701c',
+	// width : 320,
+	// height : 44,
+	// top : 0,
+// });
+// MapaView = Ti.UI.createView({
+	// height : 400,
+	// width : 320
+// });
 
-var view = Ti.UI.createView({
-	backgroundColor : '#f1701c',
-	width : 320,
-	height : 44,
-	top : 0,
+//imagen para regresar
+var regresar = Ti.UI.createImageView({
+	image:'../images/BARRITA.png',
+	width : '320dp',
+	height : '35dp',
+	top : '0dp',
 });
-MapaView = Ti.UI.createView({
-	height : 400,
-	width : 320
+mapaSede.add(regresar);
+
+regresar.addEventListener('click', function(e) {
+	mapaSede.close();
 });
 
-var mapa = new BaseDeDatos().InformacionMapa(mapaSede.id);
+
+
+
+//imagen y logo de flisol
+var logoPantalla = Titanium.UI.createImageView({
+	image:'../images/FLISOLgeneral.png',
+	height:'40dp',
+	width:'230dp',
+	top:'40dp',
+});
+mapaSede.add(logoPantalla);
+
+
+//cuadro grande contenedor
+var mapaView= Ti.UI.createView({
+	borderRadius:7,
+	backgroundColor:'#fff',
+	borderColor:'#f1701c',
+	borderWidth:'6',
+	left:'15dp',
+	right:'15dp',
+	down:'25dp',
+	top : '85dp',
+});
+mapaSede.add(mapaView);
+
+
+
+//var mapa = new BaseDeDatos().InformacionMapa(mapaSede.id);
 
 var datos = Titanium.Map.createAnnotation({
 
