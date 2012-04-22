@@ -62,17 +62,96 @@ var logoPantalla = Titanium.UI.createImageView({
 });
 acerca.add(logoPantalla);
 
-// cuadro grande contenedor
-var cuadroPrincipal= Ti.UI.createView({
-	borderRadius:7,
-	backgroundColor:'#fff',
-	borderColor:'#f1701c',
-	borderWidth:'6',
-	//top : '50dp',
-	left:'15dp',
-	right:'15dp',
-	down:'25dp',
-	
-	top : '50dp',
+// // cuadro grande contenedor
+// var cuadroPrincipal= Ti.UI.createView({
+	// borderRadius:7,
+	// backgroundColor:'#fff',
+	// borderColor:'#f1701c',
+	// borderWidth:'6',
+	// //top : '50dp',
+	// left:'15dp',
+	// right:'15dp',
+	// down:'25dp',
+// 	
+	// top : '50dp',
+// });
+// acerca.add(cuadroPrincipal)
+
+
+var acerca1 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca1.png'
 });
-acerca.add(cuadroPrincipal)
+var acerca2 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca2.png'
+});
+var acerca3 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca3.png'
+});
+var acerca4 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca4.png'
+});
+var acerca5 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca5.png'
+});
+var acerca6 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca6.png'
+});
+
+var acerca7 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca7.png'
+});
+var acerca8 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca8.png'
+});
+var acerca9 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca9.png'
+});
+var acerca10 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca10.png'
+});
+var acerca11 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca11.png'
+});
+var acerca12 = Ti.UI.createView({
+	width : '216dp',
+	height : '156dp',
+	backgroundImage : '/images/acerca12.png'
+});
+
+
+var scrollView = Ti.UI.createScrollableView({
+	views : [acerca1, acerca2, acerca3,acerca4, acerca5, acerca6,acerca7, acerca8, acerca9,acerca10, acerca11, acerca12,],
+	showPagingControl : true,
+	clipViews : false,
+	pagingControlColor : '#d4d0cd',
+	top : '40dp',
+	//left : '10%dp',
+	width : '300dp',
+	height : '250dp',
+
+});
+
+acerca.add(scrollView);
+
