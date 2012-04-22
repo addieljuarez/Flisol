@@ -5,13 +5,21 @@ Logfile initialized
 [INFO] Titanium SDK version: 2.0.1 (04/12/12 16:33 999c68a)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
-[DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.004444 seconds on emulator to get ready
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 40 seconds)
+[DEBUG] waited 40.124498 seconds on emulator to get ready
+[INFO] Waiting for the Android Emulator to become available
 [DEBUG] com.FAM.Flisol installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying CommonJS modules...
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: /home/addiel/Titanium Studio Workspace/Flisol/Resources/ui/redes.js => /home/addiel/Titanium Studio Workspace/Flisol/build/android/bin/assets/Resources/ui/redes.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
 [DEBUG] found drawable-notlong-land-hdpi splash screen at /home/addiel/Titanium Studio Workspace/Flisol/Resources/android/images/res-notlong-land-hdpi/default.png
@@ -28,5 +36,4 @@ Logfile initialized
 [INFO] Re-launching application ... Flisol
 [INFO] Launching application ... Flisol
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.FAM.Flisol/.FlisolActivity }
-Warning: Activity not started, its current task has been brought to the front
 

@@ -48,3 +48,13 @@ var cuadroPrincipal= Ti.UI.createView({
 });
 winRedes.add(cuadroPrincipal)
 
+
+var imagenTwitter = Titanium.UI.createImageView({
+	image : '../images/twitter.png',
+	top:'10%',
+	left:'25%',
+	width:'80dp',
+	height:'100dp'
+});
+cuadroPrincipal.add(imagenTwitter);
+
