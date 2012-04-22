@@ -52,7 +52,7 @@ ActualizarDatos=  function(url,callback) {
 			callback(actualizacion);
 
 		} catch(E) {
-			alert(E);
+			//alert(E);
 
 		}
 

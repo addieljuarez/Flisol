@@ -1,3 +1,12 @@
+// 
+//  main.js
+//  Flisol
+//  
+//  Created by @addieljuarez, @__arch3r on 2012-04-22.
+//  Copyright 2012 addiel, antonio. All rights reserved.
+// 
+
+
 exports.Main = function() {
 
 	Ti.UI.setBackgroundColor('#fff');

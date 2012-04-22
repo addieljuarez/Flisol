@@ -135,6 +135,7 @@ loaderTwitterSearch.onload = function() {
 			},
 			height : '20dp',
 			top : '18dp',
+			width:'200dp',
 			color:'#000'
 		});
 		row.add(tweet);

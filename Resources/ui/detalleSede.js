@@ -144,16 +144,14 @@ haciaPagina.addEventListener('click', (function(e){
 		//title:e.rowData.id,
 		url:'/ui/pagina.js',
 		id:e.id,
-		
 		navBarHidden:true ,
-		
 	});
-	alert : (sede.title);
+	alert  (sede.title);
 //pagina.open({modal:true})
 }));
 
 
-//hacai el mapa
+//hacia el mapa
 var haciaMapa = Titanium.UI.createImageView({
 	image:'../images/haciaMapa.png',
 	height:'55dp',

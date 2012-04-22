@@ -1,3 +1,11 @@
+// 
+//  app.js
+//  Flisol
+//  
+//  Created by @addieljuarez, @__arch3r on 2012-04-20.
+//  Copyright 2012 addiel, antonio. All rights reserved.
+// 
+
 Titanium.include('/db/db.js');
 Titanium.include('/json/json.js');
 Titanium.include('/data/images.js');
@@ -19,7 +27,9 @@ var sedes = Ti.UI.currentWindow;
 // sedes.add(labelActualizar);
 
 
-
+//
+// buscador
+//
 var search = Titanium.UI.createSearchBar({
 	barColor : '#f38239',
 	height : '40dp',
@@ -29,6 +39,9 @@ var search = Titanium.UI.createSearchBar({
 	
 });
 
+//
+// logo y texto de flisol
+//
 var logoPantalla = Titanium.UI.createImageView({
 	image:'../images/FLISOLgeneral.png',
 	height:'40dp',
@@ -52,7 +65,9 @@ sedes.add(logoPantalla);
 
 
 
-
+//
+//cuadro contenedor principal
+//
 
 var sedesTV = Titanium.UI.createTableView({
 	borderRadius:7,
@@ -69,9 +84,7 @@ var sedesTV = Titanium.UI.createTableView({
 	editable : true,
 	backgroundColor:'#f0efee',
 	search: search,
-     filterAttribute:'filter',
-     
-	
+    filterAttribute:'filter',
 });
 
 
@@ -88,10 +101,10 @@ parsearBd = function(){
 					filter:json[i].nombre,
 				});
 				var logoSede = Titanium.UI.createImageView({
-					height : 50,
-					width : 50,
-					top : 2,
-					left : 3,
+					height : '47dp',
+					width : '47dp',
+					top : '3dp',
+					left : '7dp',
 					image : getImage(json[i].logo),
 					touchEnabled : false,
 					backgroundColor : '#fff',
@@ -101,41 +114,44 @@ parsearBd = function(){
 				var nombreSede = Titanium.UI.createLabel({
 					text : json[i].nombre,
 					font : {
-						fontSize : '16dp',
+						fontSize : '18dp',
 						fontWeight : 'bold'
 					},
-					left : '60dp',
-					top : '-20dp',
+					left : '70dp',
+					top : '15dp',
+					color:'#000',
+					width:'280dp',
+					
 					touchEnabled : false
 				});
 
-				var direccionSede = Titanium.UI.createLabel({
-					text : json[i].direccion.substring(0, 40),
-					font : {
-						fontSize : '12dp'
-					},
-					left : '60dp',
-					top : '10dp',
-					color : '#1f1f1d',
-					touchEnabled : false
-				});
+				// var direccionSede = Titanium.UI.createLabel({
+					// text : json[i].direccion.substring(0, 40),
+					// font : {
+						// fontSize : '12dp'
+					// },
+					// left : '60dp',
+					// top : '10dp',
+					// color : '#1f1f1d',
+					// touchEnabled : false
+				// });
+// 
+				// var horarioSede = Titanium.UI.createLabel({
+					// text : json[i].horario,
+					// font : {
+						// fontSize : '12dp',
+					// },
+					// height : 'auto',
+					// left : '64dp',
+					// top : '38dp',
+					// color : '#878681',
+					// touchEnabled : false
 
-				var horarioSede = Titanium.UI.createLabel({
-					text : json[i].horario,
-					font : {
-						fontSize : '12dp',
-					},
-					height : 'auto',
-					left : '64dp',
-					top : '38dp',
-					color : '#878681',
-					touchEnabled : false
-
-				});
+			//	});
 			caja.add(logoSede);
 			caja.add(nombreSede);
-			caja.add(direccionSede);
-			caja.add(horarioSede);
+			//caja.add(direccionSede);
+			//caja.add(horarioSede);
 			tableData.push(caja);
 
 			}
@@ -158,17 +174,17 @@ parsearJson = function(num) {
 				};
 
 			for( i = 0; i < json.length; i++) {
-		alert(json[i].nombre);
+		//alert(json[i].nombre);
 				var caja = Titanium.UI.createTableViewRow({
 					id : json[i].id_sede,
 					hasChild : true,
 					filter:json[i].nombre,
 				});
 				var logoSede = Titanium.UI.createImageView({
-					height : 50,
-					width : 50,
-					top : 2,
-					left : 3,
+					height : '50dp',
+					width : '50dp',
+					top : '2dp',
+					left : '3dp',
 					image : getImage(json[i].logo),
 					touchEnabled : false,
 					backgroundColor : '#fff',
@@ -181,8 +197,8 @@ parsearJson = function(num) {
 						fontSize : '16dp',
 						fontWeight : 'bold'
 					},
-					left : '60dp',
-					top : '-20dp',
+					left : '20dp',
+					top : '0dp',
 					touchEnabled : false
 				});
 
@@ -233,7 +249,7 @@ parsearJson = function(num) {
 
 
 if (new BaseDeDatos().NumeroDeFilas()==0){
-	alert('Se va a actualizar');
+	alert('La tabla está vacia, se actualizara');
 	parsearJson(0); 
 	Ti.API.info("Nop hay datos en la tabla");
 	}
