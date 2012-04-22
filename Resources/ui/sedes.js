@@ -75,97 +75,13 @@ var sedesTV = Titanium.UI.createTableView({
 });
 
 
-var boton = Titanium.UI.createButton({
-	
-});
-
 parsearBd = function(){
 			var tableData = [];
-			
+
 			var json= new BaseDeDatos().Sedes();
-						
-			for( i = 0; i < json.length; i++) {
-				
-				var caja = Titanium.UI.createTableViewRow({
-					id : json[i].idSede,
-					hasChild : true,
-					filter:json[i].nombre,
-				});
-				var logoSede = Titanium.UI.createImageView({
-					height : '45dp',
-					width : '45dp',
-					top : '2dp',
-					left : '9dp',
-					image : getImage(json[i].logo),
-					touchEnabled : false,
-					backgroundColor : '#fff',
-
-				});
-
-				var nombreSede = Titanium.UI.createLabel({
-					text : json[i].nombre,
-					font : 
-					{
-						fontSize : '15dp',
-						fontWeight : 'bold',
-						//color:'#000'
-					},
-					left : '60dp',
-					//top : '-20dp',
-					touchEnabled : false,
-					color:'#000'
-				});
-
-				// var direccionSede = Titanium.UI.createLabel({
-					// text : json[i].direccion.substring(0, 40),
-					// font : {
-						// fontSize : '12dp'
-					// },
-					// left : '60dp',
-					// top : '10dp',
-					// color : '#1f1f1d',
-					// touchEnabled : false
-				// });
-// 
-				// var horarioSede = Titanium.UI.createLabel({
-					// text : json[i].horario,
-					// font : {
-						// fontSize : '12dp',
-					// },
-					// height : 'auto',
-					// left : '64dp',
-					// top : '38dp',
-					// color : '#878681',
-					// touchEnabled : false
-// 
-				// });
-			caja.add(logoSede);
-			caja.add(nombreSede);
-		//	caja.add(direccionSede);
-		//	caja.add(horarioSede);
-			tableData.push(caja);
-			
-			}
-			
-			sedesTV.setData(tableData);
-	
-}
-
-parsearJson = function(num) {
-	var xhr = Ti.Network.createHTTPClient();
-	xhr.open("GET", "https://www.dimsatec.com/services/flisol/index.php/services/sedes");
-	xhr.onload = function() {
-		try {
-			var tableData = [];
-			json = JSON.parse(this.responseText);
-			
-			if(num==1){
-				new BaseDeDatos().EliminarTablas();
-				Ti.API.info("Se elimina base de datos");
-				};
 
 			for( i = 0; i < json.length; i++) {
-				
+
 				var caja = Titanium.UI.createTableViewRow({
 					id : json[i].idSede,
 					hasChild : true,
@@ -221,7 +137,84 @@ parsearJson = function(num) {
 			caja.add(direccionSede);
 			caja.add(horarioSede);
 			tableData.push(caja);
-			
+
+			}
+
+			sedesTV.setData(tableData);
+
+}
+
+parsearJson = function(num) {
+	var xhr = Ti.Network.createHTTPClient();
+	xhr.open("GET", "https://www.dimsatec.com/services/flisol/api/sedes");
+	xhr.onload = function() {
+		try {
+			var tableData = [];
+			json = JSON.parse(this.responseText);
+
+			if(num==1){
+				new BaseDeDatos().EliminarTablas();
+				Ti.API.info("Se elimina base de datos");
+				};
+
+			for( i = 0; i < json.length; i++) {
+		alert(json[i].nombre);
+				var caja = Titanium.UI.createTableViewRow({
+					id : json[i].id_sede,
+					hasChild : true,
+					filter:json[i].nombre,
+				});
+				var logoSede = Titanium.UI.createImageView({
+					height : 50,
+					width : 50,
+					top : 2,
+					left : 3,
+					image : getImage(json[i].logo),
+					touchEnabled : false,
+					backgroundColor : '#fff',
+
+				});
+
+				var nombreSede = Titanium.UI.createLabel({
+					text : json[i].nombre,
+					font : {
+						fontSize : '16dp',
+						fontWeight : 'bold'
+					},
+					left : '60dp',
+					top : '-20dp',
+					touchEnabled : false
+				});
+
+				var direccionSede = Titanium.UI.createLabel({
+					text : json[i].direccion.substring(0, 40),
+					font : {
+						fontSize : '12dp'
+					},
+					left : '60dp',
+					top : '10dp',
+					color : '#1f1f1d',
+					touchEnabled : false
+				});
+
+				var horarioSede = Titanium.UI.createLabel({
+					text : json[i].horario,
+					font : {
+						fontSize : '12dp',
+					},
+					height : 'auto',
+					left : '64dp',
+					top : '38dp',
+					color : '#878681',
+					touchEnabled : false
+
+				});
+			caja.add(logoSede);
+			caja.add(nombreSede);
+			caja.add(direccionSede);
+			caja.add(horarioSede);
+			tableData.push(caja);
+
 
 			}
 			new BaseDeDatos().ActualizarSedes(json);
@@ -236,6 +229,8 @@ parsearJson = function(num) {
 	};
 	xhr.send();
 }
+
+
 
 if (new BaseDeDatos().NumeroDeFilas()==0){
 	alert('Se va a actualizar');

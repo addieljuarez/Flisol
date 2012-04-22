@@ -3,7 +3,7 @@ Titanium.include('/json/json.js');
 function BaseDeDatos() {
 	var db = Titanium.Database.open("Flisol");
 	db.execute("CREATE TABLE IF NOT EXISTS SEDES(idSede INTEGER PRIMARY KEY NOT NULL,  nombre TEXT NOT NULL , direccion  TEXT NOT NULL, horario   TEXT NOT NULL, contacto TEXT NOT NULL, url TEXT NOT NULL, logo TEXT NOT NULL)");
-	db.execute("CREATE TABLE IF NOT EXISTS MAPAS(idMapa INTEGER PRIMARY KEY NOT NULL, latitud DOUBLE NOT NULL, longitud DOUBLE NOT NULL, latitudP DOUBLE NOT NULL , longitudP DOUBLE NOT NULL, nombreMapa TEXT NOT NULL)");
+	db.execute("CREATE TABLE IF NOT EXISTS MAPAS(idMapa INTEGER PRIMARY KEY NOT NULL, latitud DOUBLE NOT NULL, longitud DOUBLE NOT NULL, nombreMapa TEXT NOT NULL)");
 	db.close();
 	iconDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'icons');
 	if(!iconDir.exists()) {
@@ -27,7 +27,7 @@ function BaseDeDatos() {
 		for(var i = 0; i < json.length; i++) {
 			var sede = json[i];
 			db.execute('INSERT INTO SEDES(idSede, nombre, direccion,horario, contacto, url, logo) VALUES(?,?,?,?,?,?,?)', sede.idSede, sede.nombre, sede.direccion, sede.horario, sede.contacto, sede.url, sede.logo);
-			db.execute('INSERT INTO MAPAS(idMapa, latitud, longitud, nombreMapa) VALUES(?,?,?,?,?,?)', sede.idSede, sede.latitud, sede.longitud, sede.nombre);
+			db.execute('INSERT INTO MAPAS(idMapa, latitud, longitud, nombreMapa) VALUES(?,?,?,?)', sede.idSede, sede.latitud, sede.longitud,sede.nombre);
 			Ti.API.info('Guardando datos  --DB-- # ' + i);
 		}
 		db.close();
@@ -118,8 +118,6 @@ function BaseDeDatos() {
 			var row = new Object();
 			row.latitud = resultSedesDatos.fieldByName("latitud");
 			row.longitud = resultSedesDatos.fieldByName("longitud");
-			row.latitudP = resultSedesDatos.fieldByName("latitudP");
-			row.longitudP = resultSedesDatos.fieldByName("longitudP");
 			row.nombreMapa = resultSedesDatos.fieldByName("nombreMapa");
 			mapa.push(row);
 			l++;
@@ -130,24 +128,4 @@ function BaseDeDatos() {
 		return mapa;
 
 	}
-	
-	this.InformacionPagina = function(id){
-		var db = Ti.Database.open('Flisol');
-		var resultSedesDatos = db.execute('select  idSede, url from SEDES where idSede =' + id + ' ');
-		var infoPagina = [];
-		var l = 0;
-		while(resultSedesDatos.isValidRow()) {
-			var row = new Object();
-			row.idSede = resultSedesDatos.fieldByName("idSede");
-			row.pagina = resultSedesDatos.fieldByName("url");
-			infoPagina.push(row);
-			l++;
-			Ti.API.info(l);
-			resultSedesDatos.next();
-		}
-		resultSedesDatos.close();
-		return infoPagina;
-
-	}
-	
 }

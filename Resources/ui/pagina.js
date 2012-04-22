@@ -10,17 +10,17 @@ pagina.backgroundColor='#000';
 //var sedeBD = new BaseDeDatos().InformacionSede(sede.ID);
 
 //imagen para regresar
-var regresar = Ti.UI.createImageView({
-	image:'../images/BARRITA.png',
-	width : '320dp',
-	height : '35dp',
-	top : '0dp',
-});
-pagina.add(regresar);
-
-regresar.addEventListener('click', function(e) {
-	pagina.close();
-});
+// var regresar = Ti.UI.createImageView({
+	// image:'../images/BARRITA.png',
+	// width : '320dp',
+	// height : '35dp',
+	// top : '0dp',
+// });
+// pagina.add(regresar);
+// 
+// regresar.addEventListener('click', function(e) {
+	// pagina.close();
+// });
 
 
 
@@ -30,7 +30,7 @@ var logoPantalla = Titanium.UI.createImageView({
 	image:'../images/FLISOLgeneral.png',
 	height:'40dp',
 	width:'230dp',
-	top:'40dp',
+	top:'5dp',
 });
 pagina.add(logoPantalla);
 
@@ -40,10 +40,12 @@ var cuadroPrincipal= Ti.UI.createView({
 	backgroundColor:'#fff',
 	borderColor:'#f1701c',
 	borderWidth:'6',
+	//top : '50dp',
 	left:'15dp',
 	right:'15dp',
 	down:'25dp',
-	top : '85dp',
+	
+	top : '50dp',
 });
 pagina.add(cuadroPrincipal)
 

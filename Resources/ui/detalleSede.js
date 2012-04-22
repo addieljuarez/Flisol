@@ -8,14 +8,14 @@ sede.animate = true;
 var sedeBD = new BaseDeDatos().InformacionSede(sede.ID);
 
 //imagen para regresar
-var view = Ti.UI.createImageView({
-	image:'../images/BARRITA.png',
-	width : '320dp',
-	height : '35dp',
-	top : '0dp',
-	//left:'2dp',
-	//right:'2dp',
-});
+// var view = Ti.UI.createImageView({
+	// image:'../images/BARRITA.png',
+	// width : '320dp',
+	// height : '35dp',
+	// top : '0dp',
+	// //left:'2dp',
+	// //right:'2dp',
+// });
 
 
 // var labelRegreso = Titanium.UI.createLabel({
@@ -30,7 +30,7 @@ var logoPantalla = Titanium.UI.createImageView({
 	image:'../images/FLISOLgeneral.png',
 	height:'40dp',
 	width:'230dp',
-	top:'40dp',
+	top:'5dp',
 	//left:'40dp',
 });
 sede.add(logoPantalla);
@@ -46,7 +46,7 @@ var footer = Ti.UI.createView({
 	right:'15dp',
 	down:'25dp',
 	
-	top : '85dp',
+	top : '50dp',
 });
 
 
@@ -217,9 +217,9 @@ footer.add(horario);
 
 
 //el boton view regeresa a la ventana anterior
-view.addEventListener('click', function(e) {
-	sede.close();
-});
+// view.addEventListener('click', function(e) {
+	// sede.close();
+// });
 
 // table.addEventListener('click', function(e) {
 // 
@@ -245,5 +245,5 @@ view.addEventListener('click', function(e) {
 	// }
 // });
 //sede.add(table);
-sede.add(view);
+//sede.add(view);
 sede.add(footer);

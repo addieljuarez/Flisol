@@ -14,17 +14,17 @@ mapaSede.backgroundColor = '#000';
 // });
 
 //imagen para regresar
-var regresar = Ti.UI.createImageView({
-	image:'../images/BARRITA.png',
-	width : '320dp',
-	height : '35dp',
-	top : '0dp',
-});
-mapaSede.add(regresar);
-
-regresar.addEventListener('click', function(e) {
-	mapaSede.close();
-});
+// var regresar = Ti.UI.createImageView({
+	// image:'../images/BARRITA.png',
+	// width : '320dp',
+	// height : '35dp',
+	// top : '0dp',
+// });
+// mapaSede.add(regresar);
+// 
+// regresar.addEventListener('click', function(e) {
+	// mapaSede.close();
+// });
 
 
 
@@ -34,7 +34,7 @@ var logoPantalla = Titanium.UI.createImageView({
 	image:'../images/FLISOLgeneral.png',
 	height:'40dp',
 	width:'230dp',
-	top:'40dp',
+	top:'5dp',
 });
 mapaSede.add(logoPantalla);
 
@@ -45,10 +45,12 @@ var mapaView= Ti.UI.createView({
 	backgroundColor:'#fff',
 	borderColor:'#f1701c',
 	borderWidth:'6',
+	//top : '50dp',
 	left:'15dp',
 	right:'15dp',
 	down:'25dp',
-	top : '85dp',
+	
+	top : '50dp',
 });
 mapaSede.add(mapaView);
 

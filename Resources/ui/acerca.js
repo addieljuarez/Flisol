@@ -1,3 +1,4 @@
+Titanium.include('/db/db.js');
 var acerca = Ti.UI.currentWindow;
 
 acerca.backgroundColor='#fff';
@@ -11,6 +12,18 @@ var view = Ti.UI.createView({
 
 acerca.add(view);
 
+
+
+var boton = Titanium.UI.createButton({
+	title:'prueba',
+	top:100,
+});
+
+acerca.add(boton);
+
+boton.addEventListener('click', function(e){
+	alert( new BaseDeDatos().NumeroDeFilas());
+});
 
 var historia = Ti.UI.createLabel({
 	text:'Historia',
