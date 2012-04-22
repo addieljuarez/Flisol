@@ -4,7 +4,7 @@ exports.FuncionJson = function() {
 	var xhr = Ti.Network.createHTTPClient();
 
 	Ti.API.info('Se dice que tipo de peticion sera y la url');
-	xhr.open("GET", "https://www.dimsatec.com/services/flisol/api/sedes");
+	xhr.open("GET", "https://www.dimsatec.com/services/flisol/api/sedes/format/json");
 
 	xhr.onload = function() {
 		Ti.API.info('Obtiene informacion json del servidor y se parsea')

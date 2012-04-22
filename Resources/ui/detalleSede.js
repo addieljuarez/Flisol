@@ -1,12 +1,16 @@
 Titanium.include('/db/db.js');
 Titanium.include('/data/images.js');
-Titanium.include('/ui/pagina.js')
+Titanium.include('/ui/pagina.js');
+Titanium.include('ui/mapa.js')
 var sede = Ti.UI.currentWindow;
 sede.backgroundColor = '#000';
 sede.animate = true;
 
 var sedeBD = new BaseDeDatos().InformacionSede(sede.ID);
 var pagina1 = sedeBD[0].url;
+
+var mapaPunto = sedeBD[0].latitud;
+
 //imagen para regresar
 // var view = Ti.UI.createImageView({
 	// image:'../images/BARRITA.png',
@@ -142,14 +146,20 @@ footer.add(haciaPagina);
 haciaPagina.addEventListener('click', (function(){
 	//alert(pagina1);
 	
-	var pagina = Ti.UI.createWindow({
-		//title:e.rowData.id,
-		url:'/ui/pagina.js',
-		idu:pagina1,
-		navBarHidden:true ,
-	});
-	//alert  (sede.title);
-	pagina.open({modal:true})
+	// var pagina = Ti.UI.createWindow({
+		// //title:e.rowData.id,
+		// url:'/ui/pagina.js',
+		// idu:pagina1,
+		// navBarHidden:true ,
+	// });
+	// //alert  (sede.title);
+	// pagina.open({modal:true})
+	
+	
+	//alert (pagina1);
+	var paginas = new pagW(pagina1);
+	paginas.open({modal:true});
+	//alert (pagina1);
 }));
 
 
@@ -165,15 +175,20 @@ var haciaMapa = Titanium.UI.createImageView({
 footer.add(haciaMapa);
 
 haciaMapa.addEventListener('click', (function(e){
-	var mapa = Ti.UI.createWindow({
-		//title:e.rowData.id,
-		url:'/ui/mapa.js',
-		//ID:E,
-		navBarHidden:true ,
-		id:sede.ID
-	});
+	// var mapa = Ti.UI.createWindow({
+		// //title:e.rowData.id,
+		// url:'/ui/mapa.js',
+		// //ID:E,
+		// navBarHidden:true ,
+		// id:sede.ID
+//	})//;
+	//
+	//mapa.open({modal:true})
 	
-	mapa.open({modal:true})
+	//var mapaPrueba = new mapaL('19.4311','-99.1367');
+//	mapaPrueba.open({modal:true});
+alert(mapaPunto)
+	
 }));
 
 

@@ -2,8 +2,8 @@ Titanium.include('/db/db.js');
 Titanium.include('/data/images.js');
 
 
-var  pagina = Ti.UI.currentWindow;
-pagina.backgroundColor='#000';
+// var  pagina = Ti.UI.currentWindow;
+// pagina.backgroundColor='#000';
 
 //var paginaDB = new BaseDeDatos().InformacionSede(sede);
 //var infoPagina = new BaseDeDatos().InformacionPagina(id)
@@ -22,7 +22,13 @@ pagina.backgroundColor='#000';
 	// pagina.close();
 // });
 
+pagW= function(pagina1){
 
+	var ventanaL = Titanium.UI.createWindow({
+		backgroundColor:'#000'
+	});
+
+///////////////////////////////////////////////////////////////////////////////////7
 
 
 //imagen y logo de flisol
@@ -32,28 +38,77 @@ var logoPantalla = Titanium.UI.createImageView({
 	width:'230dp',
 	top:'5dp',
 });
-pagina.add(logoPantalla);
+ventanaL.add(logoPantalla);
 //alert(pagina.idu);
 
-var pag = pagina.idu
-// cuadro grande cont	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||enedor
-var cuadroPrincipal= Ti.UI.createWebView({
-	
-	//url:pag,
-//	borderRadius:7,
-	//backgroundColor:'#fff',
-	//borderColor:'#f1701c',
-	//borderWidth:'6',
-	//top : '50dp',
+	var webP = Titanium.UI.createWebView({
+		 url : pagina1,
+		// top:'44dp',
+		// width : '320dp',
+		// height:'436dp',
+		// left:'0',
+		// touchEnabled:true,
+		
+		borderRadius:7,
+	backgroundColor:'#fff',
+	borderColor:'#f1701c',
+	borderWidth:'6',
+	top : '50dp',
 	left:'15dp',
 	right:'15dp',
-	//down:'25dp',
-	
-	top : '50dp',
-	
-	
-});
-pagina.add(cuadroPrincipal)
+	down:'25dp',
+// 	
+		
+		// //url:pag,
+// //	borderRadius:7,
+	// //backgroundColor:'#fff',
+	// //borderColor:'#f1701c',
+	// //borderWidth:'6',
+	// //top : '50dp',
+	// left:'15dp',
+	// right:'15dp',
+	// //down:'25dp',
+// 	
+	// top : '50dp',
+// 	
+// 	
+// });
+// pagina.add(cuadroPrincipal)
+
+	});
+
+
+ventanaL.add(webP);
+
+
+
+	return ventanaL;
+
+
+
+
+
+
+
+// var pag = pagina.idu
+// // cuadro grande cont	||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||enedor
+// var cuadroPrincipal= Ti.UI.createWebView({
+// 	
+	// //url:pag,
+// //	borderRadius:7,
+	// //backgroundColor:'#fff',
+	// //borderColor:'#f1701c',
+	// //borderWidth:'6',
+	// //top : '50dp',
+	// left:'15dp',
+	// right:'15dp',
+	// //down:'25dp',
+// 	
+	// top : '50dp',
+// 	
+// 	
+// });
+// pagina.add(cuadroPrincipal)
 
 //espacio para la pagina web
 // var webP = Titanium.UI.createWebView({
@@ -97,3 +152,4 @@ pagina.add(cuadroPrincipal)
 	// color : '#c5500b'
 // });
 // cuadroPrincipal.add(nombre);
+}

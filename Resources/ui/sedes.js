@@ -162,7 +162,7 @@ parsearBd = function(){
 
 parsearJson = function(num) {
 	var xhr = Ti.Network.createHTTPClient();
-	xhr.open("GET", "https://www.dimsatec.com/services/flisol/api/sedes");
+	xhr.open("GET", "https://www.dimsatec.com/services/flisol/api/sedes/format/json");
 	xhr.onload = function() {
 		try {
 			var tableData = [];
