@@ -35,6 +35,13 @@
             <orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
         </orientations>
     </iphone>
-    <android xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <android xmlns:android="http://schemas.android.com/apk/res/android" >
+    <property name="ti.android.compilejs" type="bool">true</property>
+        <tool-api-level>8</tool-api-level>
+        <manifest android:installLocation="preferExternal" android:versionCode="1" android:versionName="1.0">
+        <uses-sdk android:minSdkVersion="6"/>
+        </manifest>
+        
+    </android>
     <modules/>
 </ti:app>
