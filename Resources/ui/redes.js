@@ -150,5 +150,32 @@ loaderTwitterSearch.send();
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//  menu del botón
+if(Titanium.Platform.osname == 'android') {
+	//Se hace referencia a la activity
+	var activity = Ti.Android.currentActivity;
+
+	//Se crea el menu y se agrega la opcion de 
+	//salir, desautentificacion
+	activity.onCreateOptionsMenu = function(e) {
+		var menu = e.menu;
+
+		var actualizar = menu.add({
+			title : "Actualizar Lista"
+		});
+
+		//cuando se selecciona 'salir' se cambia el valor de
+		//autenficacion a falso, y se activa el evento desautenticacion
+		//para que se abra la ventana de autentificacion
+		actualizar.addEventListener("click", function(e) {
+			//sedesTV.setData();
+	        alert('Actualizando');
+			//parsearJson(1);
+			tweet.open();
+			tweet.close();
+		});
+	}
+}
 
 
