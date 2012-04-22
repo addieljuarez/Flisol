@@ -1,6 +1,8 @@
 var mapas = Ti.UI.currentWindow;
 
 mapas.backgroundColor = '#000';
+var latitude;
+var longitude;
 // 
 // var view = Titanium.UI.createView({
 	// backgroundColor : '#f1701c',
@@ -147,19 +149,6 @@ mapas.add(logoPantalla);
 
 
 //cuadro grande contenedor
-var mapaView= Ti.UI.createView({
-	borderRadius:7,
-	backgroundColor:'#fff',
-	borderColor:'#f1701c',
-	borderWidth:'6',
-	//top : '50dp',
-	left:'15dp',
-	right:'15dp',
-	down:'25dp',
-	
-	top : '50dp',
-});
-mapas.add(mapaView);
 
 
 
@@ -195,60 +184,60 @@ function translateErrorCode(code) {
 	}
 }
 
-var currentHeadingLabel = Titanium.UI.createLabel({
-	text:'Current Heading (One Shot)',
-	font:{fontSize:12, fontWeight:'bold'},
-	color:'#111',
-	top:10,
-	left:10,
-	height:15,
-	width:300
-});
-//win.add(currentHeadingLabel);
-
-var currentHeading = Titanium.UI.createLabel({
-	text:'Updated Heading not fired',
-	font:{fontSize:12},
-	color:'#444',
-	top:30,
-	left:10,
-	height:15,
-	width:300
-});
-//////win.add(currentHeading);
-
-var updatedHeadingLabel = Titanium.UI.createLabel({
-	text:'Updated Heading',
-	font:{fontSize:12, fontWeight:'bold'},
-	color:'#111',
-	top:50,
-	left:10,
-	height:15,
-	width:300
-});
-//win.add(updatedHeadingLabel);
-
-var updatedHeading = Titanium.UI.createLabel({
-	text:'Updated Heading not fired',
-	font:{fontSize:12},
-	color:'#444',
-	top:70,
-	left:10,
-	height:15,
-	width:300
-});
-//win.add(updatedHeading);
-
-var updatedHeadingTime = Titanium.UI.createLabel({
-	text:'',
-	font:{fontSize:11},
-	color:'#444',
-	top:90,
-	left:10,
-	height:15,
-	width:300
-});
-//win.add(updatedHeadingTime);
+// var currentHeadingLabel = Titanium.UI.createLabel({
+	// text:'Current Heading (One Shot)',
+	// font:{fontSize:12, fontWeight:'bold'},
+	// color:'#111',
+	// top:10,
+	// left:10,
+	// height:15,
+	// width:300
+// });
+// //win.add(currentHeadingLabel);
+// 
+// var currentHeading = Titanium.UI.createLabel({
+	// text:'Updated Heading not fired',
+	// font:{fontSize:12},
+	// color:'#444',
+	// top:30,
+	// left:10,
+	// height:15,
+	// width:300
+// });
+// //////win.add(currentHeading);
+// 
+// var updatedHeadingLabel = Titanium.UI.createLabel({
+	// text:'Updated Heading',
+	// font:{fontSize:12, fontWeight:'bold'},
+	// color:'#111',
+	// top:50,
+	// left:10,
+	// height:15,
+	// width:300
+// });
+// //win.add(updatedHeadingLabel);
+// 
+// var updatedHeading = Titanium.UI.createLabel({
+	// text:'Updated Heading not fired',
+	// font:{fontSize:12},
+	// color:'#444',
+	// top:70,
+	// left:10,
+	// height:15,
+	// width:300
+// });
+// //win.add(updatedHeading);
+// 
+// var updatedHeadingTime = Titanium.UI.createLabel({
+	// text:'',
+	// font:{fontSize:11},
+	// color:'#444',
+	// top:90,
+	// left:10,
+	// height:15,
+	// width:300
+// });
+// //win.add(updatedHeadingTime);
 
 var currentLocationLabel = Titanium.UI.createLabel({
 	text:'Current Location (One Shot)',
@@ -382,7 +371,7 @@ var locationAdded = false;
 //
 if (Titanium.Geolocation.locationServicesEnabled === false)
 {
-	Titanium.UI.createAlertDialog({title:'Kitchen Sink', message:'Your device has geo turned off - turn it on.'}).show();
+	Titanium.UI.createAlertDialog({title:'Flisol', message:'Your device has geo turned off - turn it on.'}).show();
 }
 else
 {
@@ -391,13 +380,13 @@ else
 		Ti.API.info('Authorization: '+authorization);
 		if (authorization == Titanium.Geolocation.AUTHORIZATION_DENIED) {
 			Ti.UI.createAlertDialog({
-				title:'Kitchen Sink',
+				title:'Flisol',
 				message:'You have disallowed Titanium from running geolocation services.'
 			}).show();
 		}
 		else if (authorization == Titanium.Geolocation.AUTHORIZATION_RESTRICTED) {
 			Ti.UI.createAlertDialog({
-				title:'Kitchen Sink',
+				title:'Flisol',
 				message:'Your system has disallowed Titanium from running geolocation services.'
 			}).show();
 		}
@@ -423,22 +412,22 @@ else
 		//
 		Ti.Geolocation.getCurrentHeading(function(e)
 		{
-			if (e.error)
-			{
-				currentHeading.text = 'error: ' + e.error;
-				Ti.API.info("Code translation: "+translateErrorCode(e.code));
-				return;
-			}
-			var x = e.heading.x;
-			var y = e.heading.y;
-			var z = e.heading.z;
-			var magneticHeading = e.heading.magneticHeading;
-			var accuracy = e.heading.accuracy;
-			var trueHeading = e.heading.trueHeading;
-			var timestamp = e.heading.timestamp;
-
-			currentHeading.text = 'x:' + x + ' y: ' + y + ' z:' + z;
-			Titanium.API.info('geo - current heading: ' + new Date(timestamp) + ' x ' + x + ' y ' + y + ' z ' + z);
+			// if (e.error)
+			// {
+				// currentHeading.text = 'error: ' + e.error;
+				// Ti.API.info("Code translation: "+translateErrorCode(e.code));
+				// return;
+			// }
+			// var x = e.heading.x;
+			// var y = e.heading.y;
+			// var z = e.heading.z;
+			// var magneticHeading = e.heading.magneticHeading;
+			// var accuracy = e.heading.accuracy;
+			// var trueHeading = e.heading.trueHeading;
+			// var timestamp = e.heading.timestamp;
+// 
+			// currentHeading.text = 'x:' + x + ' y: ' + y + ' z:' + z;
+			// Titanium.API.info('geo - current heading: ' + new Date(timestamp) + ' x ' + x + ' y ' + y + ' z ' + z);
 		});
 
 		//
@@ -446,33 +435,33 @@ else
 		//
 		var headingCallback = function(e)
 		{
-			if (e.error)
-			{
-				updatedHeading.text = 'error: ' + e.error;
-				Ti.API.info("Code translation: "+translateErrorCode(e.code));
-				return;
-			}
-
-			var x = e.heading.x;
-			var y = e.heading.y;
-			var z = e.heading.z;
-			var magneticHeading = e.heading.magneticHeading;
-			var accuracy = e.heading.accuracy;
-			var trueHeading = e.heading.trueHeading;
-			var timestamp = e.heading.timestamp;
-
-			updatedHeading.text = 'x:' + x + ' y: ' + y + ' z:' + z;
-			updatedHeadingTime.text = 'timestamp:' + new Date(timestamp);
-			updatedHeading.color = 'red';
-			updatedHeadingTime.color = 'red';
-			setTimeout(function()
-			{
-				updatedHeading.color = '#444';
-				updatedHeadingTime.color = '#444';
-
-			},100);
-
-			Titanium.API.info('geo - heading updated: ' + new Date(timestamp) + ' x ' + x + ' y ' + y + ' z ' + z);
+			// if (e.error)
+			// {
+				// updatedHeading.text = 'error: ' + e.error;
+				// Ti.API.info("Code translation: "+translateErrorCode(e.code));
+				// return;
+			// }
+// 
+			// var x = e.heading.x;
+			// var y = e.heading.y;
+			// var z = e.heading.z;
+			// var magneticHeading = e.heading.magneticHeading;
+			// var accuracy = e.heading.accuracy;
+			// var trueHeading = e.heading.trueHeading;
+			// var timestamp = e.heading.timestamp;
+// 
+			// updatedHeading.text = 'x:' + x + ' y: ' + y + ' z:' + z;
+			// updatedHeadingTime.text = 'timestamp:' + new Date(timestamp);
+			// updatedHeading.color = 'red';
+			// updatedHeadingTime.color = 'red';
+			// setTimeout(function()
+			// {
+				// updatedHeading.color = '#444';
+				// updatedHeadingTime.color = '#444';
+// 
+			// },100);
+// 
+			// Titanium.API.info('geo - heading updated: ' + new Date(timestamp) + ' x ' + x + ' y ' + y + ' z ' + z);
 		};
 		Titanium.Geolocation.addEventListener('heading', headingCallback);
 		headingAdded = true;
@@ -514,8 +503,8 @@ else
 			return;
 		}
 
-		var longitude = e.coords.longitude;
-		var latitude = e.coords.latitude;
+		 longitude = e.coords.longitude;
+		 latitude = e.coords.latitude;
 		var altitude = e.coords.altitude;
 		var heading = e.coords.heading;
 		var accuracy = e.coords.accuracy;
@@ -543,8 +532,8 @@ else
 			return;
 		}
 
-		var longitude = e.coords.longitude;
-		var latitude = e.coords.latitude;
+		 longitude = e.coords.longitude;
+		 latitude = e.coords.latitude;
 		var altitude = e.coords.altitude;
 		var heading = e.coords.heading;
 		var accuracy = e.coords.accuracy;
@@ -668,3 +657,28 @@ if (Titanium.Platform.name == 'android')
 	});
 }
 ///////////////////////////////////////////////////////////////////////////////////////////77
+
+
+
+var mapaView= Ti.Map.createView({
+	borderRadius:7,
+	style:Titanium.Map.STANDARD_TYPE,
+	region:{latitude:latitude, longitude:longitude, latitudeDelta:0.1, longitudeDelta:0.1},
+	//longitude = e.coords.longitude;
+	//	 latitude = e.coords.latitude;
+	backgroundColor:'#fff',
+	borderColor:'#f1701c',
+	borderWidth:'6',
+	//top : '50dp',
+	left:'15dp',
+	right:'15dp',
+	down:'25dp',
+	animate:true,
+    regionFit:true,
+    userLocation:true,
+	
+	top : '50dp',
+});
+mapas.add(mapaView);
+
+
