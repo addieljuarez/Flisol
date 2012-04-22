@@ -172,8 +172,8 @@ if(Titanium.Platform.osname == 'android') {
 			//sedesTV.setData();
 	        alert('Actualizando');
 			//parsearJson(1);
-			tweet.open();
 			tweet.close();
+			tweet.open();
 		});
 	}
 }
