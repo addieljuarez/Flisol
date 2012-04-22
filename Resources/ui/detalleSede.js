@@ -6,7 +6,7 @@ sede.backgroundColor = '#000';
 sede.animate = true;
 
 var sedeBD = new BaseDeDatos().InformacionSede(sede.ID);
-
+var pagina1 = sedeBD[0].url;
 //imagen para regresar
 // var view = Ti.UI.createImageView({
 	// image:'../images/BARRITA.png',
@@ -138,16 +138,18 @@ var haciaPagina = Titanium.UI.createImageView({
 	
 });
 footer.add(haciaPagina);
-
-haciaPagina.addEventListener('click', (function(e){
+//lert(pagina1);
+haciaPagina.addEventListener('click', (function(){
+	//alert(pagina1);
+	
 	var pagina = Ti.UI.createWindow({
 		//title:e.rowData.id,
 		url:'/ui/pagina.js',
-		id:e.id,
+		idu:pagina1,
 		navBarHidden:true ,
 	});
-	alert  (sede.title);
-//pagina.open({modal:true})
+	//alert  (sede.title);
+	pagina.open({modal:true})
 }));
 
 
@@ -157,6 +159,7 @@ var haciaMapa = Titanium.UI.createImageView({
 	height:'55dp',
 	width:'200dp',
 	top:'70%',
+
 	
 });
 footer.add(haciaMapa);
@@ -167,7 +170,7 @@ haciaMapa.addEventListener('click', (function(e){
 		url:'/ui/mapa.js',
 		//ID:E,
 		navBarHidden:true ,
-		
+		id:sede.ID
 	});
 	
 	mapa.open({modal:true})

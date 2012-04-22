@@ -181,10 +181,10 @@ parsearJson = function(num) {
 					filter:json[i].nombre,
 				});
 				var logoSede = Titanium.UI.createImageView({
-					height : '50dp',
-					width : '50dp',
-					top : '2dp',
-					left : '3dp',
+					height : '47dp',
+					width : '47dp',
+					top : '3dp',
+					left : '7dp',
 					image : getImage(json[i].logo),
 					touchEnabled : false,
 					backgroundColor : '#fff',
@@ -194,14 +194,16 @@ parsearJson = function(num) {
 				var nombreSede = Titanium.UI.createLabel({
 					text : json[i].nombre,
 					font : {
-						fontSize : '16dp',
+						fontSize : '18dp',
 						fontWeight : 'bold'
 					},
-					left : '20dp',
-					top : '0dp',
+					left : '70dp',
+					top : '15dp',
+					color:'#000',
+					width:'280dp',
+					
 					touchEnabled : false
 				});
-
 				var direccionSede = Titanium.UI.createLabel({
 					text : json[i].direccion.substring(0, 40),
 					font : {
@@ -227,8 +229,8 @@ parsearJson = function(num) {
 				});
 			caja.add(logoSede);
 			caja.add(nombreSede);
-			caja.add(direccionSede);
-			caja.add(horarioSede);
+			//caja.add(direccionSede);
+			//caja.add(horarioSede);
 			tableData.push(caja);
 
 

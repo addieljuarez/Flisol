@@ -2,7 +2,7 @@ Titanium.include('/db/db.js');
 Titanium.include('/data/images.js');
 
 
-var pagina = Ti.UI.currentWindow;
+var  pagina = Ti.UI.currentWindow;
 pagina.backgroundColor='#000';
 
 //var paginaDB = new BaseDeDatos().InformacionSede(sede);
@@ -33,19 +33,25 @@ var logoPantalla = Titanium.UI.createImageView({
 	top:'5dp',
 });
 pagina.add(logoPantalla);
+//alert(pagina.idu);
 
+var pag = pagina.idu
 // cuadro grande contenedor
-var cuadroPrincipal= Ti.UI.createView({
-	borderRadius:7,
-	backgroundColor:'#fff',
-	borderColor:'#f1701c',
-	borderWidth:'6',
+var cuadroPrincipal= Ti.UI.createWebView({
+	
+	//url:pag,
+//	borderRadius:7,
+	//backgroundColor:'#fff',
+	//borderColor:'#f1701c',
+	//borderWidth:'6',
 	//top : '50dp',
 	left:'15dp',
 	right:'15dp',
-	down:'25dp',
+	//down:'25dp',
 	
 	top : '50dp',
+	
+	
 });
 pagina.add(cuadroPrincipal)
 

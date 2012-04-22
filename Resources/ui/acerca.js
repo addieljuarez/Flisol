@@ -42,15 +42,7 @@ acerca.backgroundColor='#000';
 //      
 // });
 // 
-// var queEs = Ti.UI.createLabel({
-			// text : 'El Festival Latinoamericano de Instalación de Software Libre (FLISoL) es el evento de difusión de Software Libre más grande en Latinoamérica. Se realiza desde el año 2005 y desde el 2008 se adoptó su realización el 4to Sábado de abril de cada año. En el 2012 será el día 28 de Abril.',
-			// left : '20',
-			// height : '200dp',
-			// top : '90dp',
-			// width:'280dp',
-			// color: '#312c2a'
-		// });
-// acerca.add(queEs);
+
 // acerca.add(historia);
 
 
@@ -62,96 +54,95 @@ var logoPantalla = Titanium.UI.createImageView({
 });
 acerca.add(logoPantalla);
 
-// // cuadro grande contenedor
-// var cuadroPrincipal= Ti.UI.createView({
-	// borderRadius:7,
-	// backgroundColor:'#fff',
-	// borderColor:'#f1701c',
-	// borderWidth:'6',
-	// //top : '50dp',
-	// left:'15dp',
-	// right:'15dp',
-	// down:'25dp',
-// 	
-	// top : '50dp',
-// });
-// acerca.add(cuadroPrincipal)
+// cuadro grande contenedor
+var cuadroPrincipal= Ti.UI.createView({
+	borderRadius:7,
+	backgroundColor:'#fff',
+	borderColor:'#f1701c',
+	borderWidth:'6',
+	//top : '50dp',
+	left:'15dp',
+	right:'15dp',
+	down:'25dp',
+	
+	top : '50dp',
+});
+acerca.add(cuadroPrincipal)
 
 
-var acerca1 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca1.png'
+var acerca1 = Ti.UI.createImageView({
+	width : '80dp',
+	height : '80dp',
+	image : '/images/acerca1.png',
+	top:'50dp',
+	left:'5%'
 });
-var acerca2 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca2.png'
+var acerca2 = Ti.UI.createImageView({
+	width : '80dp',
+	height : '80dp',
+	image : '/images/acerca2.png',
+	top:'80dp',
+	left:'38%'
 });
-var acerca3 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca3.png'
-});
-var acerca4 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca4.png'
-});
-var acerca5 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca5.png'
-});
-var acerca6 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca6.png'
-});
-
-var acerca7 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca7.png'
-});
-var acerca8 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca8.png'
-});
-var acerca9 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca9.png'
-});
-var acerca10 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca10.png'
-});
-var acerca11 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca11.png'
-});
-var acerca12 = Ti.UI.createView({
-	width : '216dp',
-	height : '156dp',
-	backgroundImage : '/images/acerca12.png'
+var acerca3 = Ti.UI.createImageView({
+	width : '80dp',
+	height : '80dp',
+	image : '/images/acerca3.png',
+	top:'120dp',
+	left:'70%'
 });
 
 
-var scrollView = Ti.UI.createScrollableView({
-	views : [acerca1, acerca2, acerca3,acerca4, acerca5, acerca6,acerca7, acerca8, acerca9,acerca10, acerca11, acerca12,],
-	showPagingControl : true,
-	clipViews : false,
-	pagingControlColor : '#d4d0cd',
-	top : '40dp',
-	//left : '10%dp',
-	width : '300dp',
-	height : '250dp',
 
+var marco = Titanium.UI.createView({
+	borderRadius:5,
+	backgroundColor:'#FACC2E',
+	borderColor:'#000',
+	borderWidth:'3',
+	//top : '50dp',
+	left:'15dp',
+	right:'15dp',
+	//down:'25dp',
+	
+	top : '200dp',
 });
+cuadroPrincipal.add(marco);
 
-acerca.add(scrollView);
+var queEs = Ti.UI.createLabel({
+			text : 'El Festival Latinoamericano de Instalación de Software Libre (FLISoL) es el evento de difusión de Software Libre más grande en Latinoamérica. Se realiza desde el año 2005 y desde el 2008 se adoptó su realización el 4to Sábado de abril de cada año. En el 2012 será el día 28 de Abril.',
+			left : '20',
+			height : '180dp',
+			top : '2dp',
+			width:'240dp',
+			color: '#312c2a'
+		});
+marco.add(queEs);
+var contactos = Ti.UI.createLabel({
+			text : 'created by: @__arch3r, @AddielJuarez',
+			left : '20',
+			height : '200dp',
+			top : '75dp',
+			width:'240dp',
+			color: '#312c2a',
+			font:{size:'7dp'}
+		});
+marco.add(contactos);
+
+var contactos2 = Ti.UI.createLabel({
+			text : 'Design: Denisse López',
+			left : '20',
+			height : '200dp',
+			top : '85dp',
+			width:'240dp',
+			color: '#312c2a',
+			font:{size:'7dp'}
+		});
+marco.add(contactos2);
+
+
+cuadroPrincipal.add(acerca1);
+cuadroPrincipal.add(acerca2);
+
+cuadroPrincipal.add(acerca3);
+
 

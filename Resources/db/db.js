@@ -100,7 +100,7 @@ function BaseDeDatos() {
 			row.direccion = resultSedesDatos.fieldByName("direccion");
 			row.logo = resultSedesDatos.fieldByName("logo");
 			row.contacto = resultSedesDatos.fieldByName("contacto");
-			row.pagina = resultSedesDatos.fieldByName("url");
+			row.url = resultSedesDatos.fieldByName("url");
 			sede.push(row);
 			l++;
 			Ti.API.info(l);
